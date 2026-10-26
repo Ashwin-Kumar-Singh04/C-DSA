@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1775499889 source:c:\users\srika\onedrive\attachments\documents\desktop\recursion c++\main.cpp
+	<iostream>
+	<algorithm>
+	<cmath>
+	<vector>
+
