@@ -1,352 +1,346 @@
 #include <iostream>
-#include<algorithm>
-#include <cmath>
-#include <vector>
+#include <string>
 using namespace std;
-/// recursive program for factorial
-/*int fact(int n){
-    if(n==1){
-        return 1;
+/*class Student{
+public:
+    string name;
+    int rollno;
+    float cgpa;
+
+    ///making a constructor
+    ///MUlTIPLE CONSTRUCTORS CAN BE CREATED AND THIS IS CALLED CONSTRUCTOR OVERLOADING
+    Student(string n,int r,float c){
+        name=n;
+        rollno=r;
+        cgpa=c;
     }
-    int ans=n*fact(n-1);
-    return ans;
-}
+    Student(int r,float c,string n){
+        name=n;
+        rollno=r;
+        cgpa=c;
+    }
+    Student(string n,float c){
+        name=n;
+        cgpa=c;
+    }
+
+    ///imp remember: whenever you are creating a parameterized constructor then also create a default constructor
+
+    Student(){
+     ///Default constructor : called evary time during normal initialization
+
+    }
+
+};
+int main(){
+    Student s3("Bha",105,9.0);
+
+    Student s4(82,8.9,"shu");
+
+    Student s5("Vikram",10.0);
+    ///NORMAL INITIALIZATION : DEFAULT CONSTRUCTOR IS CALLED
+    Student s1;
+    s1.name="Ashwin";
+    s1.rollno=82;
+    s1.cgpa=8.86;
+
+    Student s2;
+    s2.name="Hri";
+    s2.rollno=20;
+    s2.cgpa=9.2;
+
+    cout<<"s1 "<<s1.name<<" has "<<s1.cgpa<<" gpa "<<endl;
+    cout<<"s2 "<<s2.name<<" has "<<s2.cgpa<<" gpa "<<endl;
+    cout<<"s3 "<<s3.name<<" has "<<s3.cgpa<<" gpa "<<endl;
+    cout<<"s4 "<<s4.name<<" has "<<s4.cgpa<<" gpa "<<endl;
+    cout<<"s5 "<<s5.name<<" has "<<s5.cgpa<<" gpa "<<endl;
+
+
+    return 0;
+}*/
+
+/*class Car{
+public:
+    string name;
+    float mileage;
+    int power;
+    bool isE20compatible;
+};
 int main()
 {
-    int i=fact(5);
-    cout<<i;
-    return 0;
-}*/
-/// recursive program for fibonacci
-/*int fib(int n){
-    if (n==1 ||n==0) return n;
-    return fib(n-1)+fib(n-2);
-}
-int main(){
-    int result=fib(5);
-    cout<<result;
-    return 0;
-}*/
-/// recursive program for sum of digits of a integer
-/*int sumdig(int n){
-    if(n==0) return 0;
-    int s=n%10;
-    return s+sumdig(n/10);
-}
+   Car c1;
+   c1.mileage=9.2;
+   c1.name="Mahindra Thar";
+   c1.power=118;
+   c1.isE20compatible=true;
 
-int main(){
-    int n;
-    cin>>n;
-    int result=sumdig(n);
-    cout<<result;
-    return 0;
-}*/
-///recursive program for calculating p^q
-/*int f(int p,int q){
-    if(q==0) return 1;
-    return p*f(p,q-1);
-}
-int main(){
-    int n,m;
-    cin>>n>>m;
-    cout<<f(n,m);
-    return 0;
-}*/
-///recursive program array
-/// traversing a array
-/*void f(int *arr,int idx,int n){
-    //base case
-    if(idx==n) return;
-    cout<<arr[idx];
-    f(arr,idx+1,n);
-}
-int main(){
-    int arr[4]={1,2,3,4,5};
-    int n=5;
-    f(arr,0,n);
-    return 0;
-}*/
-///recursive approach on an array to get the max  element of the array
-/*int f(int *arr,int idx,int n){
-    if(idx==n-1) return arr[idx];//base case
-    return max(arr[idx],f(arr,idx+1,n));
-}
-int main(){
-    int arr[]={1,2,50,8,6};
-    int n=5;
-    cout<<f(arr,0,n);
-    return 0;
-}*/
-///recursive approach on an array to get the sum of element of the array
-/*int f(int *arr,int idx,int n){
-    if(idx==n-1) return arr[idx];//base case
-    return arr[idx]+f(arr,idx+1,n);
-}
-int main(){
-    int arr[]={9,11,10,7,3};
-    int n=5;
-    cout<<f(arr,0,n);
-    return 0;
-}*/
-///recursion on string
-///removing all the occurence of a and returning it
-/*string f(string &s,int idx,int n){
-    if(idx==n) return"";
-    string curr="";
-    curr+=s[idx];
-    return (s[idx]=='a'?"":curr)+f(s,idx+1,n);
-}
-int main(){
-    string s="abacus";
-    int n=6;
-    cout<<f(s,0,n);
-    return 0;
-}*/
-///program on finding a number is palindrome or not using recursion
-/*bool f(int num,int *temp){
-//base case
-    if(num>=0 && num<=9){
-        int lastdigitoftemp=(*temp)%10;
-        (*temp)/=10;
-        return (num==lastdigitoftemp);
-    }
-    bool result=(f(num/10,temp) and (num)%10==(*temp%10));
-    (*temp)/=10;
-    return result;
-
-}
-int main(){
-    int num=121;
-    int anothernum=num;
-    int *temp=&anothernum;
-    cout<<f(num,temp);
-    return 0;
+   Car c2={"Toyota Fortuner",7.2,200,false};
+   cout<<c2.power<<endl;
+   return 0;
 
 }*/
-///printing the number in decreasing order
-/*void f(int num){
-    if (num==1){
-        cout<<num;
-        return;
+
+///Function inside a class
+/*class Car{
+public:
+    string name;
+    float mileage;
+    int power;
+    bool isE20compatible;
+    void display(){ //pasing a class inside a function
+        ///jis function ke through call lagaya uska power name mileage aur compatability print hoga
+        cout<<name<<" "<<power<<" "<<mileage<<" "<<isE20compatible<<endl;
     }
-    cout<<num;
-    f(num-1);
+};
+//details are display using outside function
+//void display(Car c){ //pasing a class inside a function
+  //  cout<<c.name<<" "<<c.power<<" "<<c.mileage<<" "<<c.isE20compatible<<endl;
+//}
+int main()
+{
+   Car c1;
+   c1.mileage=9.2;
+   c1.name="Mahindra Thar";
+   c1.power=118;
+   c1.isE20compatible=true;
+
+   Car c2={"Toyota Fortuner",7.2,200,false};
+   //display(c1);
+   //display(c2);
+   ///displaying via function inside a class
+   c1.display();
+   c2.display(); ///jis function ke through call lagaya uska power name mileage aur compatability print hoga
+   return 0;
+
+}
+*/
+///passing objects to functions
+///here the objects pass are pass by value
+/*class Student{
+public:
+    string name;
+    int rollno;
+    float cgpa;
+    Student(string n,int r,float c){
+        name=n;
+        rollno=r;
+        cgpa=c;
+    }
+    void print(){
+        cout<<name<<" "<<rollno<<" "<<cgpa<<" "<<endl;
+    }
+};
+void change(Student &s){///here it comes as pass by refernce if i want to change name i can use & to access it by refernece
+    //bina ampersand ke ek naya object bana hoga jo s hai aiur usme bhi wahi sab values hogi
+    s.name="Bhaw";
 }
 int main(){
-    int a=4;
-    f(a);
+    Student s3("Bha",105,9.0);
+    change(s3);
+    s3.print();
     return 0;
 }*/
-///printing the number in ascending order
-///Method-1
-/*void f(int num,int *ptr){
-    //int s=num;
-    if(*ptr==num){
-        cout<<*ptr;
-        return;
+
+///This Keyword
+/*class Pokemon{
+public:
+    string name;
+    string type;
+    int hp;
+    ///this is added so that the system doesnot get confused in global and local name
+    ///we can also give default values in a constructor
+    Pokemon(string name,string type,int hp){
+        this->name=name;
+        this->type=type;
+        this->hp=hp;
     }
-    cout<<*ptr;
-    *ptr=*ptr+1;
-    f(num,ptr);
-}
+    void print(){
+        cout<<name<<" "<<type<<" "<<hp<<endl;
+    }
+};
 int main(){
-    int num=4;
-    int t=1;
-    int *ptr=&t;
-    f(num,ptr);
+    Pokemon p3("Mewtwo","Psychic",200);
+    p3.print();
+    Pokemon p1("Pikachu","Electric",70);
+    Pokemon p2("charizard","Fire",120);
     return 0;
 }*/
-///Method-2
-/*void f(int n){
-    if(n<1){
-        return;
-    }
-    f(n-1);
-    cout<<n<<" ";
-}
-int main(){
+
+///MAKE  A FRACTION CLASS WHICH>POORTS ADDITION MULTIPLICATION ADDITION AND SUBTRACTION AND SIMPLIFY
+/*class fraction{
+public:
     int num;
-    cin>>num;
-    f(num);
-    return 0;
-}*/
-///printing k multiple of  a given  number
-/*void f(int num,int k){
-    //base case
-    if(k==0) return;
-    //assumption that the given function can give k-1 multiple of the number
-    f(num,k-1);
-    cout<<num*k<<" ";
-}
-int main(){
-    int num;
-    cin>>num;
-    int k;
-    cin>>k;
-    f(num,k);
-    return 0;
-}*/
-///recursion in c++ t o get alternate plus and minus sign
-/*int f(int num){
-   // base case
-    if(num==0) return 0;
-   //Assumption
-   return f(num-1)+((num%2==0)?(-num):(num));
-}
-int main(){
-    cout<<f(5);
-    return 0;
-}*/
-///finding the gcd in a number
-/*int gcd(int a,int b){
-    if(b>a) return gcd(b,a);
-    //base case
-    if (b==0) return a;
-    //assumption
-    return gcd(b,a%b);
-}
-int main(){
-    int a,b;
-    cin>>a>>b;
-    int x=gcd(a,b);
-    cout<<x<<"is the highest common factor";
-}*/
-///Program to check whether a given number is armgstorm or not
-/*int pow(int p,int q){
-    if(q==0) return 1;
-    return p*powr(p,q-1);
-}
-int dig(int num, int count){
-    if(num==0) return count;
-    count=count+1;
-    return dig(num/10,count);
-}
-int f(int num,int digit){
-     if (num==0) return 0;
-     return f(num/10,digit)+ powr(num%10,digit);
-
-}
-int main(){
-    int num;
-    cin>>num;
-    int count =0;
-    int digit=dig(num,count);
-    int ans=f(num,digit);
-    if(ans==num) cout<<"true";
-    else cout<<"false";
-    return 0;
-}*/
-///frog jump c++ program
-/*int f(int *h,int n,int i){
-    //Base case
-    if(i==n-1) return 0;
-    if(i==n-2) return f(h,n,i+1)+abs(h[i]-h[i+1]);
-
-    return min(f(h,n,i+1)+abs(h[i]-h[i+1]),f(h,n,i+2)+abs(h[i]-h[i+2]));
-}
-int main(){
-    int arr[]={10,20,30,90};
-    int n=4;
-    cout<<f(arr,n,0);
-    return 0;
-}*/
-///to check whether atarget element is present in a given array or not
-///M-1 by my method facing problem
-/*int f(int *arr,int x,int i,int n){
-        if (i==n){
-           //cout <<"not found";
-            return 0;
+    int den;
+    fraction(int num,int den){
+        this->num=num;
+        this->den=den;
+        simplify();///simplify har baar call ho
+    }
+    fraction(){//default constructor
+    }
+    void print(){
+        cout<<num<<"/"<<den<<endl;
+    }
+    ///inside
+    void multip(fraction f){
+        num=num*f.num;
+        den=den*f.den;
+        simplify();
+    }
+    void add(fraction f){
+        num=num*f.den+f.num*den;
+        den=den*f.den;
+        simplify();
+    }
+    void subtract(fraction f){
+        num=num*f.den-den*f.num;
+        den=den*f.den;
+        simplify();
+    }
+    void divide(fraction f){
+        num=num*f.den;
+        den=den*f.num;
+        simplify();
+    }
+    void simplify(){
+        int hcf=gcd(num,den);
+        num/=hcf;
+        den/=hcf;
+        if(den < 0){
+            num=-num;
+            den=-den;
         }
-        else if(arr[i]==x) cout<<"oh yeah yeah";
-        //else cout<<"not found";
-        f(arr,x,i+1,n);
-
+    }
+    int gcd(int a,int b){
+        if(a==0) return b;
+        return gcd(b%a,a);
+        }
+};
+///outside
+fraction multiply(fraction &f1,fraction &f2){
+    fraction res;//default constructor required for this
+    res.num=f1.num*f2.num;
+    res.den=f1.den*f2.den;
+    return res;
+}
+fraction addition(fraction &f1,fraction &f2){
+    fraction res;//default constructor required for this
+    res.num=f1.num*f2.den+f1.den*f2.num;
+    res.den=f1.den*f2.den;
+    return res;
 }
 int main(){
-    int arr[]={1,2,3,4,5,-6};
-    int n=sizeof(arr)/sizeof(arr[0]);
-    int x=-8;
-    int i=0;
-    f(arr,x,i,n);
+    fraction f1(2,5);
+    fraction f2(3,5);
+    //fraction mul=multiply(f1,f2);
+    //fraction add=addition(f1,f2);
+    //f1.print();
+    //f2.print();
+    //cout<<"multiplication of fraction:";
+    //mul.print();
+    //cout<<"addition of fraction:";
+    //add.print();
+
+    //f1.print();
+    //f1.multip(f2);
+    //f1.print();
+    //f1.add(f2); /// f1 me hi pehle wali value aa jayegi
+    f1.print();
+    f1.subtract(f2);
+    f1.print();
+
+    fraction f3(6,8);
+    f3.print(); /// here also instead of 6/8 we get 3/4 because  in the constructor only the simplify function simplifies it
+
     return 0;
 }*/
-///m-2 Sir method
-/*bool f(int *arr,int n,int idx,int x){
-    //base case
-    if(idx==n) return false;
-    return arr[idx]==x || f(arr,n,idx+1,x);
-}
+
+///ComplexNO
+/*class fraction{
+public:
+    int num;
+    int den;
+    fraction(int num,int den){
+        this->num=num;
+        this->den=den;
+        simplify();///simplify har baar call ho
+    }
+    fraction(){//default constructor
+    }
+    void show(){
+        cout<<num<<"/"<<den;
+    }
+    ///inside
+    void simplify(){
+        int hcf=gcd(num,den);
+        num/=hcf;
+        den/=hcf;
+        if(den < 0){
+            num=-num;
+            den=-den;
+        }
+    }
+    int gcd(int a,int b){
+        if(a==0) return b;
+        return gcd(b%a,a);
+        }
+};
+class complexno{
+public:
+    int real;
+    int imaginary;
+    complexno(int real,int imaginary){
+        this->real=real;
+        this->imaginary=imaginary;
+    }
+    void sum(complexno c){
+        real=real+c.real;
+        imaginary=imaginary+c.imaginary;
+    }
+    void sub(complexno c){
+        real=real-c.real;
+        imaginary=imaginary-c.imaginary;
+    }
+    void multiply(complexno c){
+        real=real*c.real-imaginary*c.imaginary;
+        imaginary=real*c.imaginary+imaginary*c.real;
+    }
+    void divide(complexno c){
+        int real_num=real*c.real+imaginary*c.imaginary;
+        int real_den=c.real*c.real+c.imaginary*c.imaginary;
+        fraction realno(real_num,real_den);
+        int imagin_num=imaginary*c.real-c.imaginary*real;
+        int imagin_den=c.real*c.real+c.imaginary*c.imaginary;
+        fraction imag(imagin_num,imagin_den);
+        realno.show();
+        if(imagin_num>0 && imagin_den>0){
+            cout<<"+";
+        }
+        else{
+            cout<<"-";
+        }
+        imag.show();
+        cout<<"i";
+    }
+    void print(){
+        if(imaginary>0){
+            cout<<"THE COMPLEX NUMBER IS "<<real<<"+"<<imaginary<<"i"<<endl;
+        }
+        else if(imaginary<0){
+            cout<<"THE COMPLEX NUMBER IS "<<real<<"-"<<-imaginary<<"i"<<endl;
+        }
+    }
+
+};
+
 int main(){
-    int arr[]={1,2,9,8,10};
-    bool result=f(arr,5,0,9);
-    if(result==true){
-        cout<<"yes present";
-    }
-    else{
-        cout<<"not present";
-    }
-}*/
-///to get the array of sum of subsets of a given array
-/*void f(int *arr,int n,int idx,int sum,vector <int>&result){
-    if(idx==n){
-        result.push_back(sum);
-         return;
-    }
-    f(arr,n,idx+1,sum+arr[idx],result);//picking the ith element
-    f(arr,n,idx+1,sum,result);//not picking the ith element
-}
-int main(){
-    int arr[]={2,4};
-    int n=2;
-    vector <int> result;
-    f(arr,n,0,0,result);
-    for(int i=0;i<result.size();i++){
-        cout<<result[i]<<" ";
-    }
+    complexno c1(1,1);
+    complexno c2(2,1);
+    //c1.print();
+    //c1.multiply(c2);
+    //c1.print();
+    c1.divide(c2);
     return 0;
 }
 */
-///No of path to reach from i=0,j=0 to i=m-1,n-1;
-/*int f(int i,int j,int m,int n){
-    //base case
-    if(i==m-1&&j==n-1) return 1;
-    if(i>=m||j>=n) return 0;
-    return f(i+1,j,m,n)+f(i,j+1,m,n);
-}
-int main(){
-    int i=0;
-    int j=0;
-    int m=2;
-    int n=3;
-    int ans=f(i,j,m,n);
-    cout<<ans;
 
-    return 0;
-
-}*/
-///phone number question
-void f(string &str,int i,string result,vector <string> &li,vector <string> &v){
-    if(i==str.size()){
-        li.push_back(result);
-        return;
-    }
-    int digit=str[i]-'0';
-    if(digit<=1){
-        f(str,i+1,result,li,v);
-    }
-    for(int j=0;j<v[digit].size();j++)
-        f(str,i+1,result+v[digit][j],li,v);
-}
-int main(){
-    string result="";
-    string str="23";
-    vector <string> v(10);
-    v={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-    vector <string> li;
-    f(str,0,result,li,v);
-    for(int idx=0;idx<li.size();idx++){
-        cout<<li[idx];
-    }
-    return 0;
-
-}
